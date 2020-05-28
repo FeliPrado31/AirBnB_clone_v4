@@ -12,7 +12,8 @@ $(document).ready(() => {
 		$('div.amenities > h4').text(Object.values(check).join(', '))
 	})
 
-	let api = 'http://127.0.0.1:5001/api/v1/status/'
+	let api = 'http://' + window.location.hostname + '/api/v1/status/';
+	
 	$.get(api, (data, code) => {
 		if (code == 'success') {
 			if (data.status != 'OK') $('#api_status').removeClass('available')
